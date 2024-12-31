@@ -1,0 +1,94 @@
+/* DriverSelfDashboard.css */
+
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-overview {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .profile-overview h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .profile-overview p {
+    margin: 5px 0;
+    color: #777;
+  }
+  
+  .earnings-summary,
+  .ride-requests,
+  .navigation-location,
+  .notifications,
+  .shift-management {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .earnings-summary h3,
+  .ride-requests h3,
+  .navigation-location h3,
+  .notifications h3,
+  .shift-management h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #4caf50;
+  }
+  
+  .earnings-summary p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .notifications ul {
+    padding-left: 20px;
+  }
+  
+  .notifications li {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .shift-management button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .shift-management button.online {
+    background-color: #4caf50;
+  }
+  
+  .shift-management button.offline {
+    background-color: #f44336;
+  }
+  
+  .shift-management button:hover {
+    opacity: 0.9;
+  }
+  

@@ -61,18 +61,18 @@ const Sidebar = () => {
             }}
             items={[
                 {
-                    label:"Admin",
+                    label:"Admin Login",
                     key:'/adminlogin',
                     icon:<UserOutlined></UserOutlined>
 
                 },
                 {
-                    label:'Driver',
+                    label:'Driver Login',
                     key:'/driverlogin',
                     icon:<CarOutlined></CarOutlined>
                 },
                 {
-                    label:'Register',
+                    label:'Registration',
                     key:'/registration',
                     icon:<FormOutlined></FormOutlined>
                 }

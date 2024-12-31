@@ -1,0 +1,71 @@
+/* Base Layout */
+.driver-layout {
+    display: flex;
+    height: 100vh;
+    background: #f0f2f5;
+  }
+  
+  /* Sidebar styles for Desktop */
+  .driver-sidebar {
+    width: 200px;
+    background: #001529;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .driver-sidebar .sidebar-header {
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Logout Button Container */
+  .logout-container {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /* Main Content */
+  .driver-content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    overflow-y: auto;
+  }
+  
+  /* Mobile Header with Menu Toggle */
+  .mobile-header {
+    display: none;
+    padding: 10px;
+    background: #001529;
+    color: #fff;
+    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mobile-header .header-title {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Show mobile menu toggle */
+    .mobile-header {
+      display: flex;
+    }
+  
+    /* Hide sidebar on mobile */
+    .driver-sidebar {
+      display: none;
+    }
+  }
+  

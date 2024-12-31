@@ -1,31 +1,30 @@
 import React, { useState } from "react";
-import { Button, Input, Select, Card } from "antd";
+import { Button, Input, Select, Card, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import backgroundImage from "../assets/bg.jpg"; // Adjust the path as per your project structure
+import backgroundImage from "../assets/bg.jpg";
 
-const RegistrationForm = ({ onRegister }) => {
+const RegistrationForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const navigate = useNavigate();
 
-  // Provide a default function if onRegister is not passed
-  const handleRegister = onRegister || ((userData) => console.log("User registered:", userData));
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister({ name, email, password, role });
 
-    // Conditional navigation based on role
-    if (role === "admin") {
-        <div>Successfully Registered</div>
-      navigate("/");
-    } else if (role === "driver") {
-      navigate("/");
-    } else {
-      alert("Please select a role");
+    if (!name || !email || !password || !role) {
+      message.error("All fields are required!");
+      return;
     }
+
+    // Save the user data in localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    users.push({ name, email, password, role });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    message.success("Registration successful!");
+    navigate("/");
   };
 
   return (
@@ -41,7 +40,6 @@ const RegistrationForm = ({ onRegister }) => {
             rgba(0, 0, 0, 0.5)
           ), 
           url(${backgroundImage}) no-repeat center/cover`,
-        backgroundSize: "cover",
       }}
     >
       <Card
@@ -54,35 +52,24 @@ const RegistrationForm = ({ onRegister }) => {
         }}
       >
         <h2>Register</h2>
-         <label htmlFor="name" className="block mb-1">Name</label>
-        <Input className="space-y-4"
-          id="name"
-          type="text"
-        //   placeholder="Name"
+        <Input
+          placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           style={{ marginBottom: 10 }}
-          required
         />
-          <label htmlFor="name" className="block mb-1">Email</label>
         <Input
-          id="email"
-          type="email"
-        //   placeholder="Email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           style={{ marginBottom: 10 }}
-          required
         />
-        <label htmlFor="name" className="block mb-1">Password</label>
         <Input.Password
-        //   placeholder="Password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           style={{ marginBottom: 10 }}
-          required
         />
-          <label htmlFor="name" className="block mb-1">Action</label>
         <Select
           placeholder="Select Role"
           value={role}

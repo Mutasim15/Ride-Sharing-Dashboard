@@ -1,0 +1,65 @@
+/* Base Layout */
+.admin-layout {
+    display: flex;
+    height: 100vh;
+    background: #f0f2f5;
+  }
+  
+  /* Sidebar styles for Desktop */
+  .admin-sidebar {
+    width: 200px;
+    background: #001529;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Mobile Header with Menu Toggle */
+  .mobile-header {
+    display: none;
+    padding: 10px;
+    background: #001529;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Sidebar header */
+  .sidebar-header {
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Logout button container */
+  .logout-container {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /* Main content */
+  .admin-content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    overflow-y: auto;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Hide sidebar on mobile */
+    .admin-sidebar {
+      display: none;
+      
+    }
+  
+    /* Show mobile menu toggle */
+    .mobile-header {
+        width: 20%;
+      display: block;
+    }
+  }
+  

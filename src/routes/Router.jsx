@@ -29,14 +29,22 @@ const router = createBrowserRouter([
     },
     {
         path:'/adminlogin',
-        element:<LoginForm></LoginForm>
+        element:<LoginForm></LoginForm>,
+   
     },
     {
-        path:'/admin-dashboard',
+        path:'/driverlogin',
+        element:<LoginForm></LoginForm>,
+   
+    },
+
+    {
+        path:'/admindashboard',
         element:<AdminDashboard></AdminDashboard>
     },
+
     {
-        path:'/driver-dashboard',
+        path:'/driverdashboard',
         element:<DriverDashboard></DriverDashboard>
     }
 ])

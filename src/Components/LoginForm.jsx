@@ -1,31 +1,33 @@
 import React, { useState } from "react";
-import { Button, Input, Card } from "antd";
+import { Button, Input, Card, message } from "antd";
 import { useNavigate } from "react-router-dom";
-
 import backgroundImage from "../assets/bg.jpg";
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    // For simplicity, assuming admin@example.com/admin123 is Admin
-    // and driver@example.com/driver123 is Driver
-    if (email === "admin@example.com" && password === "admin123") {
-      onLogin({ role: "admin", email });
-      navigate("/admin");
-    } else if (email === "driver@example.com" && password === "driver123") {
-      onLogin({ role: "driver", email });
-      navigate("/driver");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find((u) => u.email === email && u.password === password);
+
+    if (user) {
+      if (user.role === "admin") {
+        message.success("Welcome Admin!");
+        navigate("/admindashboard");
+      } else if (user.role === "driver") {
+        message.success("Welcome Driver!");
+        navigate("/driverdashboard");
+      }
     } else {
-      alert("Invalid credentials");
+      message.error("Invalid credentials. Please try again.");
     }
   };
 
   return (
     <div
-    style={{
+      style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -36,10 +38,17 @@ const LoginForm = ({ onLogin }) => {
             rgba(0, 0, 0, 0.5)
           ), 
           url(${backgroundImage}) no-repeat center/cover`,
-        backgroundSize: "cover",
       }}
     >
-      <Card style={{ width: 300, padding: 20 }}>
+      <Card
+        style={{
+          width: 300,
+          padding: 20,
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: "10px",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
+        }}
+      >
         <h2>Login</h2>
         <Input
           placeholder="Email"
@@ -58,7 +67,9 @@ const LoginForm = ({ onLogin }) => {
         </Button>
         <div style={{ marginTop: 10, textAlign: "center" }}>
           Don't have an account?{" "}
-          <a onClick={() => navigate("/register")}>Register</a>
+          <Button type="link" onClick={() => navigate("/registration")}>
+            Register
+          </Button>
         </div>
       </Card>
     </div>
