@@ -1,12 +1,34 @@
 import React from "react";
-import { Layout, Card, Row, Col, Statistic, List, Avatar } from "antd";
+import {
+  Layout,
+  Card,
+  Row,
+  Col,
+  Statistic,
+  List,
+  Avatar,
+} from "antd";
 import {
   UserOutlined,
   CarOutlined,
   DollarOutlined,
   BellOutlined,
 } from "@ant-design/icons";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  AreaChart,
+  Area,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Bar,
+  Legend,
+  BarChart
+} from "recharts";
 
 const { Header, Content, Footer } = Layout;
 
@@ -35,6 +57,18 @@ const revenueData = [
   { month: "Nov", revenue: 22000 },
   { month: "Dec", revenue: 22000 },
 ];
+
+// Pie Chart Data
+const pieData = [
+  { name: "Jan", value: 12000 },
+  { name: "Feb", value: 12000 },
+  { name: "Mar", value: 15000 },
+  { name: "Apr", value: 15000 },
+  { name: "May", value: 20000 },
+];
+
+// Pie Chart Colors
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF6384"];
 
 const Dashboard = () => {
   return (
@@ -99,10 +133,59 @@ const Dashboard = () => {
           </Col>
         </Row>
 
-        {/* Revenue Bar Chart */}
+        {/* Revenue Chart Section */}
         <Row style={{ marginTop: "20px" }}>
           <Col span={24}>
             <Card title="Revenue Overview">
+              {/* Flex Container for Charts */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginBottom: "20px",
+                }}
+              >
+                {/* Pie Chart */}
+                <ResponsiveContainer width="45%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={pieData}
+                      dataKey="value"
+                      nameKey="name"
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={100}
+                      fill="#8884d8"
+                      label={(entry) => `${entry.name}: ${entry.value}`}
+                    >
+                      {pieData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+
+                {/* Area Chart */}
+                <ResponsiveContainer width="50%" height={300}>
+                  <AreaChart data={revenueData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area
+                      type="monotone"
+                      dataKey="revenue"
+                      stroke="#8884d8"
+                      fill="#8884d8"
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* SimpleBarChart */}
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={revenueData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -110,7 +193,7 @@ const Dashboard = () => {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="revenue" fill="#1890ff" />
+                  <Bar dataKey="revenue" fill="#82ca9d" />
                 </BarChart>
               </ResponsiveContainer>
             </Card>
