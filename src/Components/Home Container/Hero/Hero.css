@@ -1,0 +1,17 @@
+.hero-button {
+    background-color: #28a745; /* Success green background */
+    color: white; /* Text color */
+    border: 1px solid #c3e6cb; /* Border color */
+    padding: 15px 30px; /* Spacing inside the button */
+    font-size: 18px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase; /* Uppercase text */
+    /* transition: all 0.3s ease;  */
+    transition: "background-color 0.3s ease-in-out"
+  }
+
+  .hero-button:hover {
+    background-color: #001529; /* Darker green on hover */
+    border-color: #1e7e34; /* Darker border on hover */
+  }

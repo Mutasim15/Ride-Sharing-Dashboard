@@ -43,20 +43,29 @@
 
 
 import React from 'react';
-import Header from '../Pages/Shared/Header/Header';
-import Footer from '../Pages/Shared/Footer/Footer';
-import Sidebar from '../Components/Sidebar';
+// import Header from '../Pages/Shared/Header/Header';
+// import Footer from '../Pages/Shared/Footer/Footer';
+// import Sidebar from '../Components/Sidebar';
 import backgroundImage from '../assets/bg.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './Main.css';
+import Navbars from '../Components/Home Container/Navbar/Navbars';
+import MainSection from '../Components/Home Container/Main Section/MainSection';
+import Footer from '../Components/Home Container/Footer/Footer';
 
 const Main = () => {
     return (
         <div className="main-container">
-            <Header />
+            <Navbars></Navbars>
+            <MainSection></MainSection>
+            <Footer></Footer>
+            
+            {/* <Header />
             <div className="admin-layout">
-                {/* Sidebar Section */}
+              
                
-                {/* Content Section */}
+             
                 <div
                     className="content-section"
                     style={{
@@ -73,7 +82,7 @@ const Main = () => {
                 </div>
                 </div>
             </div>
-            <Footer />
+            <Footer /> */}
         </div>
     );
 };

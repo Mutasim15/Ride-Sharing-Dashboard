@@ -1,4 +1,4 @@
-.app{
+/* .app{
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -38,4 +38,30 @@ border-bottom: 1px solid rgb(0,0,0,0.17);
 
 .pagecontent{
 padding-left: 12px;
+} */
+
+
+.hero-image {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.08));
+  margin-top: 0;
+  object-fit: cover; /* Ensures the image covers the container */
+  z-index: 1; /* Layer below the content */
+  opacity: 0.7; /* Optional: Slight transparency for overlay effect */
 }
+
+/* Hero Section */
+.hero-section {
+
+  z-index: 2; /* Keeps the content above the background image */
+  overflow: hidden; /* Ensures no unwanted overflow */
+}
+
+.hero-section .z-3 {
+  z-index: 2; /* Explicitly place the content above the image */
+}
+
+.hero-section h1 {
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7); /* Text visibility over the image */
+}
+

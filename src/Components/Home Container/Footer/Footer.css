@@ -1,0 +1,26 @@
+/* Base flex styles */
+.responsive-flex {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 16px; /* Space between items */
+  }
+  
+  .responsive-flex > div {
+    flex: 1 1 calc(16.66% - 16px); /* 6 columns: 100% / 6 = 16.66% */
+    box-sizing: border-box;
+  }
+  
+  /* Adjust for medium screens (tablets) */
+  @media (max-width: 768px) {
+    .responsive-flex > div {
+      flex: 1 1 calc(33.33% - 16px); /* 3 columns: 100% / 3 = 33.33% */
+    }
+  }
+  
+  /* Adjust for small screens (mobile) */
+  @media (max-width: 576px) {
+    .responsive-flex > div {
+      flex: 1 1 calc(50% - 16px); /* 2 columns: 100% / 2 = 50% */
+    }
+  }
+  

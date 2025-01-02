@@ -5,6 +5,7 @@ import RegistrationForm from "../Components/RegistrationForm";
 import AdminDashboard from "../Components/AdminDashboard";
 import DriverDashboard from "../Components/DriverDashboard";
 import LoginForm from "../Components/LoginForm";
+import LoginPage from "../Components/Home Container/Login Page/LoginPage";
 
 const router = createBrowserRouter([
     {
@@ -19,14 +20,16 @@ const router = createBrowserRouter([
 
     },
     {
+        path:"/loginpage",
+        element:<LoginPage></LoginPage>
+    }
+    ,
+    {
 
         path:'/registration',
         element:<RegistrationForm></RegistrationForm>
     },
-    {
-        path:'/',
-        element:<LoginForm></LoginForm>
-    },
+
     {
         path:'/adminlogin',
         element:<LoginForm></LoginForm>,
