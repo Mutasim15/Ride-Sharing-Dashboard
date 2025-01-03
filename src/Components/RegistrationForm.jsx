@@ -79,7 +79,7 @@ const RegistrationForm = () => {
           <Select.Option value="admin">Admin</Select.Option>
           <Select.Option value="driver">Driver</Select.Option>
         </Select>
-        <Button type="primary" block onClick={handleSubmit}>
+        <Button   className="btnregister" type="primary" block onClick={handleSubmit}>
           Register
         </Button>
       </Card>

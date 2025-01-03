@@ -3,12 +3,12 @@
     color: white; /* Text color */
     border: 1px solid #c3e6cb; /* Border color */
     padding: 15px 30px; /* Spacing inside the button */
-    font-size: 18px; /* Font size */
+    font-size: 1 rem; /* Font size */
     border-radius: 8px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     text-transform: uppercase; /* Uppercase text */
-    /* transition: all 0.3s ease;  */
-    transition: "background-color 0.3s ease-in-out"
+    transition: "background-color 0.3s ease-in-out";
+    font-weight: 700;
   }
 
   .hero-button:hover {

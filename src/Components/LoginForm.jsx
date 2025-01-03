@@ -62,13 +62,13 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           style={{ marginBottom: 10 }}
         />
-        <Button type="primary" block onClick={handleSubmit}>
+        <Button  className="btnregister" type="primary" block onClick={handleSubmit}>
           Login
         </Button>
         <div style={{ marginTop: 10, textAlign: "center" }}>
           Don't have an account?{" "}
-          <Button type="link" onClick={() => navigate("/registration")}>
-            Register
+          <Button  type="link"  className="register" onClick={() => navigate("/registration")}>
+           Register
           </Button>
         </div>
       </Card>

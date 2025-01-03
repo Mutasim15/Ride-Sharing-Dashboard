@@ -2,28 +2,20 @@
 .custom-navbar {
     /* background-color: rgba(36, 45, 48, 0.873);  */
     background-color: #001529;
-    padding: 0.8rem 1rem; 
+    padding: 0.9rem 1rem; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+   
   }
   
   .navbar-brand img {
     border-radius: 8px; 
   }
   
-  .nav-link-custom {
-    color: white !important; 
-    font-size: large;
-    font-weight: 500; 
-    padding: 1rem 1rem; 
-    text-decoration: none; 
-    transition: background-color 0.3s, text-decoration 0.3s; 
-  }
-  
-  .nav-link-custom:hover {
-    color: rgb(168, 6, 149) !important; 
-    text-decoration: underline;
-  }
+
  
-.hero-section {
+/* .hero-section {
     width: 100%;
     height: auto; 
     position: relative;
@@ -36,7 +28,7 @@
     display: block; 
     object-fit: cover; 
   }
-  
+   */
 
 
 
@@ -49,9 +41,8 @@
 
 .website-name {
     margin: 0;
-    font-size: 1.45rem;
-    font-weight: bold;
-    /* color: #04e7cdfe; */
+    font-size: 1.95rem;
+    font-weight:700;
     color:  #28a745;
    
 }
@@ -60,13 +51,14 @@
     width: 30px;
     height: 30px;
     color: #555;
-    margin-left: 15px;
+    margin-left: 5px;
     cursor: pointer;
     transition: color 0.2s;
 }
 
 .icon:hover {
-    color: #007bff; /* Change color on hover */
+    /* color: #007bff; Change color on hover */
+     color:  #28a745;
 }
 
   

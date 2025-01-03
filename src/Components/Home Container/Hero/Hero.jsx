@@ -42,7 +42,7 @@ const Hero = () => {
                                 className="display-4 fw-bold text-white"
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, ease: "linear", delay: 0.4 }}
+                                transition={{ duration: 1, ease: "linear", delay: 0.8 }}
                             >
                                 Welcome to{" "}
                                 <span className="text-success">Jaben Naki</span> <p>Dashboard</p>
@@ -58,7 +58,7 @@ const Hero = () => {
                                     variant="success"
                                     className="hero-button text-white fw-medium px-4 py-2 rounded "
                 
-                                    style={{ transition: "background-color 0.7s ease-in-out" }}
+                                   
                                     onClick={handleGetStarted} // Add onClick handler
                                 >
                                     Get Started

@@ -27,7 +27,8 @@ import {
   ResponsiveContainer,
   Bar,
   Legend,
-  BarChart
+  BarChart,
+  Rectangle
 } from "recharts";
 
 const { Header, Content, Footer } = Layout;
@@ -69,6 +70,85 @@ const pieData = [
 
 // Pie Chart Colors
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF6384"];
+
+
+//barchart
+const targetData = [
+  {
+    month: 'January',
+    TargetRevenue: 4000,
+    ActualReveneue: 2400,
+    amt: 2400,
+  },
+  {
+    month: 'February',
+    TargetRevenue: 3000,
+    ActualReveneue: 1398,
+    amt: 2210,
+  },
+  {
+    month: 'March',
+    TargetRevenue: 2000,
+    ActualReveneue: 9800,
+    amt: 2290,
+  },
+  {
+    month: 'April',
+    TargetRevenue: 2780,
+    ActualReveneue: 3908,
+    amt: 2000,
+  },
+  {
+    month: 'May',
+    TargetRevenue:1890,
+    ActualReveneue: 4800,
+    amt: 2181,
+  },
+  {
+    month: 'June',
+    TargetRevenue: 3000,
+    ActualReveneue: 1398,
+    amt: 2500,
+  },
+  {
+    month: 'July',
+    TargetRevenue:3490,
+    ActualReveneue: 4300,
+    amt: 2100,
+  },
+  {
+    month: 'Auguest',
+    TargetRevenue:3490,
+    ActualReveneue: 4300,
+    amt: 2100,
+  },
+  {
+    month:  'September',
+    TargetRevenue: 2780,
+    ActualReveneue: 3908,
+    amt: 2100,
+  },
+  {
+    month:'October',
+    TargetRevenue:3490,
+    ActualReveneue: 4300,
+    amt: 2100,
+  },
+  {
+    month:'November',
+    TargetRevenue: 4000,
+    ActualReveneue: 2400,
+    amt: 2100,
+  },
+  {
+    month:'December',
+    TargetRevenue:1890,
+    ActualReveneue: 4800,
+    amt: 2100,
+  }
+
+
+];
 
 const Dashboard = () => {
   return (
@@ -187,13 +267,14 @@ const Dashboard = () => {
 
               {/* SimpleBarChart */}
               <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={revenueData}>
+                <BarChart data={targetData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="month" />
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="revenue" fill="#82ca9d" />
+                  <Bar dataKey="TargetRevenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+                  <Bar dataKey="ActualReveneue" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
                 </BarChart>
               </ResponsiveContainer>
             </Card>
@@ -223,7 +304,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <Footer style={{ textAlign: "center" }}>
-        Dashboard ©2024 Created with Ant Design
+       Jaben Naki Dashboard ©2025 Created with Ant Design
       </Footer>
     </Layout>
   );

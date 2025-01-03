@@ -1,37 +1,3 @@
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-
-// import logo from '../../assets/logo.png';
-// import './Navbar.css'
-
-// const Navbars = () =>{
-//     return (
-//        <>
-//         <Navbar expand="lg" className="custom-navbar">
-//         <Container>
-//           {/* Logo on the left */}
-//           <Navbar.Brand href="/">
-//             <img
-//               src={logo} 
-//               alt="Logo"
-//               width="60" 
-//               height="30"
-//               className="d-inline-block align-top"
-//             />
-//           </Navbar.Brand>
-  
-    
-//         </Container>
-//       </Navbar>
- 
-//        </>
-//       );
-// };
-
-// export default Navbars;
-
-
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
