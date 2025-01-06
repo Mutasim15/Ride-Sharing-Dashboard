@@ -304,7 +304,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <Footer style={{ textAlign: "center" }}>
-       Jaben Naki Dashboard ©2025 Created with Ant Design
+       Jaben Naki Dashboard ©2025 Created By Mut@sim
       </Footer>
     </Layout>
   );

@@ -33,6 +33,21 @@
     margin: 5px 0;
     color: #777;
   }
+
+  .dashboard-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .item {
+    flex: 1 1 calc(50% - 16px); /* Take 50% width minus gap */
+    box-sizing: border-box; /* Include padding/border in width */
+    background: #f0f0f0; /* Example background */
+    padding: 16px; /* Example padding */
+    text-align: center; /* Center text in items */
+  }
   
   .earnings-summary,
   .ride-requests,

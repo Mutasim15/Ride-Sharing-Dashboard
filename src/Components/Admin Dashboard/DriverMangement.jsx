@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Table, Tag, Space, Button, Modal, Input } from "antd";
+import { Table, Tag, Space, Button, Modal, Input, Layout } from "antd";
 
+const { Header, Content, Footer } = Layout;
 const DriverManagement = () => {
   // Mock data for drivers
   const [drivers, setDrivers] = useState([
@@ -119,39 +120,52 @@ const DriverManagement = () => {
   ];
 
   return (
-    <div>
-      <h2>Driver Management</h2>
-      <Table columns={columns} dataSource={drivers} rowKey="id" />
+    <Layout style={{ minHeight: "100vh" }}>
+        <div>
+      
+      <Header
+   style={{
+     backgroundColor: "#001529",
+     color: "#fff",
+     textAlign: "center",
+     fontSize: "24px",
+   }}
+ >
+   System Dashboard
+ </Header>
+ <Table columns={columns} dataSource={drivers} rowKey="id" />
 
-      {/* Modal for viewing driver details */}
-      <Modal
-        title="Driver Details"
-        visible={isModalVisible}
-        onCancel={handleModalClose}
-        footer={[
-          <Button key="close" onClick={handleModalClose}>
-            Close
-          </Button>,
-        ]}
-      >
-        {selectedDriver && (
-          <div>
-            <p>
-              <strong>Name:</strong> {selectedDriver.name}
-            </p>
-            <p>
-              <strong>Email:</strong> {selectedDriver.email}
-            </p>
-            <p>
-              <strong>Status:</strong> {selectedDriver.status}
-            </p>
-            <p>
-              <strong>Performance:</strong> {selectedDriver.performance}
-            </p>
-          </div>
-        )}
-      </Modal>
-    </div>
+ {/* Modal for viewing driver details */}
+ <Modal
+   title="Driver Details"
+   visible={isModalVisible}
+   onCancel={handleModalClose}
+   footer={[
+     <Button key="close" onClick={handleModalClose}>
+       Close
+     </Button>,
+   ]}
+ >
+   {selectedDriver && (
+     <div>
+       <p>
+         <strong>Name:</strong> {selectedDriver.name}
+       </p>
+       <p>
+         <strong>Email:</strong> {selectedDriver.email}
+       </p>
+       <p>
+         <strong>Status:</strong> {selectedDriver.status}
+       </p>
+       <p>
+         <strong>Performance:</strong> {selectedDriver.performance}
+       </p>
+     </div>
+   )}
+ </Modal>
+</div>
+    </Layout>
+  
   );
 };
 

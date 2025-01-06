@@ -36,18 +36,24 @@ const DriverSidebar = ({ user, onLogout }) => {
       {/* Sidebar for Desktop */}
       <div className="driver-sidebar">
         <div className="sidebar-header">Driver Panel</div>
-        <Menu
+
+         <div className="driver-sidebar-box">
+         <Menu
           theme="dark"
           mode="vertical"
           selectedKeys={[selectedKey]}
           items={menuItems}
           onClick={({ key }) => setSelectedKey(key)}
-        />
-        <div className="logout-container">
+          />
+         </div>
+        
+         <div className="logout-container">
           <Button type="primary" danger onClick={handleLogout}>
             Logout
           </Button>
         </div>
+         
+
       </div>
 
       {/* Drawer for Mobile */}
@@ -77,8 +83,8 @@ const DriverSidebar = ({ user, onLogout }) => {
 
       {/* Main Content */}
       <div className="driver-content">
-        {selectedKey === "dashboard" && <div>  Dashboard Content for Driver <DriverSelfDashboard></DriverSelfDashboard> </div>}
-        {selectedKey === "reviews" && <div>Reviews Content <Reviews></Reviews> </div>}
+        {selectedKey === "dashboard" && <div> <DriverSelfDashboard></DriverSelfDashboard> </div>}
+        {selectedKey === "reviews" && <div> <Reviews></Reviews> </div>}
       </div>
     </div>
   );

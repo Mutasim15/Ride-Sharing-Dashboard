@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import adminImage from '../../../assets/Admin.webp'; // Replace with your admin image path
-import driverImage from '../../../assets/bg.jpg'; // Replace with your driver image path
+import driverImage from '../../../assets/driver.webp'; // Replace with your driver image path
 import './LoginPage.css'; // Custom CSS for styling
 import { CarOutlined, FormOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 const LoginPage = () => {
 
     const navigate = useNavigate();
-    const handlelogin =()=>{
+    const handlelogin =(e)=>{
+        e.preventDefault();
+        console.log('Role Submitted')
         navigate('/adminlogin')
     }
 
@@ -16,6 +18,12 @@ const LoginPage = () => {
     const driverlogin =()=>{
         drivernavigate('/driverlogin')
     }
+
+    // handle role of admin and driver
+    // const handleSubmit =e =>{
+    //     e.preventDefault();
+    //     console.log('Role Submitted')
+    // }
 
     return (
         <div className="login-container d-flex vh-100">
@@ -26,7 +34,7 @@ const LoginPage = () => {
                     alt="Admin"
                     className="login-image mb-4"
                 />
-                <Button variant="primary" className="hero-button login-button" onClick={handlelogin} >
+                <Button variant="primary" className="hero-button login-button"  onClick={handlelogin} >
                 Start as Admin <UserOutlined> </UserOutlined> 
                 </Button>
             </div>

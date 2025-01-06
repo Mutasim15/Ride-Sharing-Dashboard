@@ -7,7 +7,7 @@
   
   /* Sidebar styles for Desktop */
   .driver-sidebar {
-    width: 200px;
+    width: 250px;
     background: #001529;
     color: #fff;
     display: flex;
@@ -23,6 +23,10 @@
     font-weight: bold;
   }
   
+
+  .driver-sidebar-box{
+    flex-grow: 1;
+  }
   /* Logout Button Container */
   .logout-container {
     margin: 20px;

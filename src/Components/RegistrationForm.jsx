@@ -24,7 +24,7 @@ const RegistrationForm = () => {
     localStorage.setItem("users", JSON.stringify(users));
 
     message.success("Registration successful!");
-    navigate("/loginpage");
+    navigate("/adminlogin");
   };
 
   return (

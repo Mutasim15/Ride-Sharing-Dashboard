@@ -39,17 +39,13 @@ const AdminSidebar = ({ user, onLogout }) => {
   const renderContent = () => {
     switch (selectedKey) {
       case "dashboard":
-        return <div>Dashboard Content 
-            <> <Dashboard></Dashboard>  </>
-        </div>;
+        return <Dashboard />;
       case "drivers":
-        return <div>
-               <><DriverManagement></DriverManagement> </>
-        </div>;
+        return <DriverManagement />;
       case "feedback":
-        return <div><Feedback></Feedback></div>;
+        return <Feedback />;
       case "contacts":
-        return <div><Contact></Contact></div>;
+        return <Contact />;
       default:
         return <div>Welcome to the Admin Panel</div>;
     }
@@ -65,13 +61,15 @@ const AdminSidebar = ({ user, onLogout }) => {
       {/* Sidebar for Web */}
       <div className="admin-sidebar">
         <div className="sidebar-header">Admin Dashboard</div>
-        <Menu
-          theme="dark"
-          mode="vertical"
-          selectedKeys={[selectedKey]}
-          items={menuItems}
-          onClick={handleMenuClick}
-        />
+        <div className="admin-sidebar-box">
+          <Menu
+            theme="dark"
+            mode="vertical"
+            selectedKeys={[selectedKey]}
+            items={menuItems}
+            onClick={handleMenuClick}
+          />
+        </div>
         <div className="logout-container">
           <Button type="primary" danger onClick={handleLogout}>
             Logout

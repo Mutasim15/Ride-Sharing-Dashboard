@@ -7,14 +7,21 @@
   
   /* Sidebar styles for Desktop */
   .admin-sidebar {
-    width: 200px;
+    width: 250px;
     background: #001529;
     color: #fff;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
   }
-  
+
+
+
+.admin-sidebar-box {
+  flex-grow: 1; /* Menu items take up remaining space */
+}
+
+
   /* Mobile Header with Menu Toggle */
   .mobile-header {
     display: none;
@@ -36,6 +43,7 @@
   
   /* Logout button container */
   .logout-container {
+    /* justify-content: space-between; */
     margin: 20px;
     text-align: center;
   }
