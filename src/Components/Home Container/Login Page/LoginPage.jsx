@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import adminImage from '../../../assets/Admin.webp'; // Replace with your admin image path
-import driverImage from '../../../assets/driver.webp'; // Replace with your driver image path
+import driverImage from '../../../assets/driver1.jpg'; // Replace with your driver image path
 import './LoginPage.css'; // Custom CSS for styling
 import { CarOutlined, FormOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
